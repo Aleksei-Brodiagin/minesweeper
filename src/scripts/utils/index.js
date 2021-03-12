@@ -1,3 +1,4 @@
 export {default as createFieldModel} from './createFieldModel';
 export {default as isWin} from './isWin';
-export {default as isLoose} from './isLoose';
+export {default as showMine} from './showMine';
+export {default as openCells} from './openCells';

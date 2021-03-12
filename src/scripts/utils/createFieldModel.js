@@ -103,14 +103,14 @@ const createFieldModel = (mines, rows, columns) => {
   while (minesArr.length < mines) {
     let row = Math.floor(Math.random() * rows);
     let col = Math.floor(Math.random() * columns);
-    
+
     let found = false;
     for (let item of minesArr) {
-      if(item.row === row && item.col === col) {
+      if (item.row === row && item.col === col) {
         found = true;
-      } 
+      }
     }
-    if(!found) minesArr.push({ row, col });
+    if (!found) minesArr.push({ row, col });
   }
 
   for (let i = 0; i < minesArr.length; i++) {
@@ -124,14 +124,14 @@ const createFieldModel = (mines, rows, columns) => {
       let value = 0;
 
       model[i].cells[j].nearbyCells.forEach((item) => {
-        if(item.isMined) value += 1;
+        if (item.isMined) value += 1;
       });
-      
+
       if (value > 0 && !model[i].cells[j].isMined) model[i].cells[j].value = value;
     }
   }
-  
+
   return model;
-}
+};
 
 export default createFieldModel;

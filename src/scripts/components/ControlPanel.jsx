@@ -1,4 +1,4 @@
-const ControlPanel = ({ gameState }) => {
+const ControlPanel = ({ gameState, btnSettingsHandler, btnNewGameHandler }) => {
   const classes = [];
   classes.push('btn');
   if (gameState.isWin) classes.push('new-game-btn_win');
@@ -7,11 +7,11 @@ const ControlPanel = ({ gameState }) => {
 
   return (
     <div className="control-panel">
-      <button className={classes.join(' ')} />
+      <button className={classes.join(' ')} onClick={() => btnNewGameHandler()} />
       <div className="mines-counter">
         <span className="mines-counter__text">{gameState.mines}</span>
       </div>
-      <button className="btn settings-btn" />
+      <button className="btn settings-btn" onClick={() => btnSettingsHandler()} />
     </div>
   );
 };
