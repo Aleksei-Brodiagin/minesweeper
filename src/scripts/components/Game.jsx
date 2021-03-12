@@ -12,8 +12,8 @@ const Game = () => {
   return(
     <main className='main'>
       <div className='game-container'>
-        <ControlPanel />
-        <Field />
+        <ControlPanel gameState={gameState}/>
+        <Field fieldModel={fieldModel} gameState={gameState} />
       </div>
     </main>
   );
