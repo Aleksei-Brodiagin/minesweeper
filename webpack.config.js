@@ -5,16 +5,18 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 let _mode = 'development';
 let _target = 'web';
+let _devtool = 'source-map';
 
 if (process.env.NODE_ENV === 'production') {
   _mode = 'production';
   _target = 'browserslist';
+  _devtool = 'eval';
 }
 
 module.exports = {
   mode: _mode,
   target: _target,
-  devtool: 'source-map',
+  devtool: _devtool,
   devServer: {
     contentBase: './dist',
     hot: true,
